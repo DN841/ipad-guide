@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>Larry's iPad Guide</title>
+<style>
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:#f3f4f6;color:#1f2937;line-height:1.5}
+header{position:sticky;top:0;background:#fff;padding:16px;border-bottom:1px solid #ddd}
+h1{margin:0 0 12px;font-size:30px}
+#search{width:100%;font-size:20px;padding:14px;border:1px solid #aaa;border-radius:12px;box-sizing:border-box}
+main{max-width:850px;margin:auto;padding:16px}
+.topic-button{width:100%;text-align:left;font-size:21px;font-weight:600;padding:17px;margin:5px 0;border:0;border-radius:12px;background:#0a66c2;color:#fff}
+.page{display:none;background:#fff;padding:20px;border-radius:14px}
+.page.active{display:block}
+.back{font-size:19px;padding:11px 16px;border:0;border-radius:10px;background:#e5e7eb;margin-bottom:14px}
+.page h2{font-size:28px;margin-top:0}.page li{font-size:19px;margin:10px 0}
+.note{background:#eef6ff;border-left:5px solid #0a66c2;padding:12px 14px;margin:16px 0;border-radius:6px;font-size:18px}
+</style>
+<script>
+function openPage(id){document.getElementById('home').style.display='none';document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));document.getElementById(id).classList.add('active');window.scrollTo(0,0)}
+function goHome(){document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));document.getElementById('home').style.display='block';window.scrollTo(0,0)}
+function filterTopics(){let q=document.getElementById('search').value.toLowerCase();document.querySelectorAll('.topic').forEach(x=>x.style.display=x.dataset.search.includes(q)?'block':'none')}
+</script></head>
+<body><header><h1>Larry's iPad Guide</h1><input id="search" oninput="filterTopics()" placeholder="Search topics..."/><p style="margin:8px 0 0;color:#555;font-size:15px">Updated: includes instructions for adding this guide to the Home Screen.</p></header>
+<main><section class="topic" data-search="add guide shortcut home screen safari share icon install bookmark" id="add-guide-shortcut">
+<button class="topic-button" onclick="showTopic('add-guide-shortcut')">
+    Add This Guide to Your Home Screen
+  </button>
+<div class="topic-content">
+<button class="back-button" onclick="showHome()">← Back to all topics</button>
+<h2>Add This Guide to Your Home Screen</h2>
+<p>The easiest way to return to this guide is to add a shortcut that looks like an app icon.</p>
+<ol>
+<li>Open <strong>Safari</strong>.</li>
+<li>Go to <strong>https://dn841.github.io/ipad-guide/</strong>.</li>
+<li>Tap the <strong>Share</strong> button. It looks like a square with an arrow pointing upward.</li>
+<li>Scroll down and tap <strong>Add to Home Screen</strong>.</li>
+<li>Change the name to <strong>iPad Guide</strong>, or leave the suggested name.</li>
+<li>Tap <strong>Add</strong>.</li>
+</ol>
+<p>The <strong>iPad Guide</strong> icon will now appear on your Home Screen. Tap it whenever you need help.</p>
+<h3>Put the guide in the Dock</h3>
+<ol>
+<li>Touch and hold the <strong>iPad Guide</strong> icon.</li>
+<li>Drag it into the Dock at the bottom of the screen.</li>
+<li>Release it.</li>
+</ol>
+<p><strong>Tip:</strong> Keeping the guide in the Dock makes it available from every Home Screen page.</p>
+</div>
+</section><section id="home">
+<div class="topic" data-search="home screen apps icons widgets"><button class="topic-button" onclick="openPage('home-screen')">Home Screen</button></div>
+<div class="topic" data-search="dock recent apps multitasking"><button class="topic-button" onclick="openPage('dock')">Dock</button></div>
+<div class="topic" data-search="files downloads folders move rename delete"><button class="topic-button" onclick="openPage('files')">Files App</button></div>
+<div class="topic" data-search="safari browser tabs bookmarks website"><button class="topic-button" onclick="openPage('safari')">Safari</button></div>
+<div class="topic" data-search="copy paste select text"><button class="topic-button" onclick="openPage('copy')">Copy and Paste</button></div>
+<div class="topic" data-search="split view multitasking two apps"><button class="topic-button" onclick="openPage('split')">Use Two Apps at Once</button></div>
+<div class="topic" data-search="screenshot screen capture"><button class="topic-button" onclick="openPage('shot')">Take a Screenshot</button></div>
+<div class="topic" data-search="wifi wireless network internet password"><button class="topic-button" onclick="openPage('wifi')">Wi-Fi</button></div>
+<div class="topic" data-search="app store install download update"><button class="topic-button" onclick="openPage('apps')">Install and Update Apps</button></div>
+<div class="topic" data-search="restart frozen stuck force restart"><button class="topic-button" onclick="openPage('restart')">Restart a Frozen iPad</button></div>
+</section>
+<section class="page" id="home-screen"><button class="back" onclick="goHome()">← Back</button><h2>Home Screen</h2><ol><li>Tap an app once to open it.</li><li>Touch and hold an app to move it.</li><li>Drag one app onto another to make a folder.</li><li>Tap Done when finished.</li></ol></section>
+<section class="page" id="dock"><button class="back" onclick="goHome()">← Back</button><h2>Dock</h2><ol><li>Swipe up slightly from the bottom edge and stop.</li><li>Tap an app in the Dock to open it.</li><li>Touch and hold an app and drag it into the Dock to add it.</li></ol></section>
+<section class="page" id="files"><button class="back" onclick="goHome()">← Back</button><h2>Files App</h2><ol><li>Open Files.</li><li>Tap Browse.</li><li>Tap Downloads.</li><li>Touch and hold a file to rename, move, share, or delete it.</li></ol></section>
+<section class="page" id="safari"><button class="back" onclick="goHome()">← Back</button><h2>Safari</h2><ol><li>Tap the address bar.</li><li>Type a website address or search words.</li><li>Tap Go.</li><li>Use the tab button to open or close tabs.</li><li>Use Share to add a bookmark.</li></ol></section>
+<section class="page" id="copy"><button class="back" onclick="goHome()">← Back</button><h2>Copy and Paste</h2><ol><li>Touch and hold the text.</li><li>Drag the blue handles.</li><li>Tap Copy.</li><li>Touch and hold at the destination.</li><li>Tap Paste.</li></ol></section>
+<section class="page" id="split"><button class="back" onclick="goHome()">← Back</button><h2>Use Two Apps at Once</h2><ol><li>Open the first app.</li><li>Tap the three dots at the top.</li><li>Tap Split View.</li><li>Select the second app.</li><li>Drag the center divider to resize.</li></ol></section>
+<section class="page" id="shot"><button class="back" onclick="goHome()">← Back</button><h2>Take a Screenshot</h2><ol><li>Without a Home button: press the top button and either volume button together.</li><li>With a Home button: press the top button and Home button together.</li><li>Release immediately.</li></ol><div class="note">Screenshots are saved in Photos.</div></section>
+<section class="page" id="wifi"><button class="back" onclick="goHome()">← Back</button><h2>Wi-Fi</h2><ol><li>Open Settings.</li><li>Tap Wi-Fi.</li><li>Tap your network name.</li><li>Enter the password.</li><li>Tap Join.</li></ol></section>
+<section class="page" id="apps"><button class="back" onclick="goHome()">← Back</button><h2>Install and Update Apps</h2><ol><li>Open the App Store.</li><li>Tap Search.</li><li>Find the app.</li><li>Tap Get.</li><li>For updates, tap your profile picture, then Update All.</li></ol></section>
+<section class="page" id="restart"><button class="back" onclick="goHome()">← Back</button><h2>Restart a Frozen iPad</h2><ol><li>Press and release the volume button nearest the top button.</li><li>Press and release the other volume button.</li><li>Hold the top button until the Apple logo appears.</li></ol></section>
+</main></body></html>
